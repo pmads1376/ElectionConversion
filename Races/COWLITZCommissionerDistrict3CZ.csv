@@ -1,0 +1,74 @@
+Row Label,PrecinctCode,County,Registered Voters,Mark Smith,Joe Gardner
+Total,-1,CZ,NULL,13182,16585
+Alabama,1,CZ,NULL,90,181
+Ammons,2,CZ,NULL,180,169
+Arkansas,3,CZ,NULL,86,135
+Bakers,4,CZ,NULL,4,16
+Baltimore,5,CZ,NULL,184,257
+Beacon,6,CZ,NULL,280,343
+Boondox,7,CZ,NULL,7,11
+Brynion,8,CZ,NULL,142,214
+Burcham,9,CZ,NULL,339,401
+Caples,10,CZ,NULL,129,77
+Carrolls,11,CZ,NULL,221,268
+Castle Rock,12,CZ,NULL,228,383
+Chinook,13,CZ,NULL,226,325
+Cloverdale,14,CZ,NULL,187,177
+Coal Creek,15,CZ,NULL,284,388
+Columbia Heights,16,CZ,NULL,131,151
+Columbia Valley Gdns,17,CZ,NULL,119,222
+Crawford,18,CZ,NULL,178,257
+Delameter,19,CZ,NULL,164,253
+Douglas(*),20,CZ,NULL,0,0
+Elk Ridge(*),21,CZ,NULL,0,0
+Harris,22,CZ,NULL,176,268
+Haussler,23,CZ,NULL,133,181
+Hillcrest,24,CZ,NULL,420,361
+Hudson,25,CZ,NULL,241,245
+Industrial,26,CZ,NULL,0,0
+Kalama North,27,CZ,NULL,159,203
+Kalama South,28,CZ,NULL,205,263
+Kessler,29,CZ,NULL,254,309
+Lake,30,CZ,NULL,169,227
+Laurel,31,CZ,NULL,301,276
+Lewis River,32,CZ,NULL,335,341
+Lexington,33,CZ,NULL,168,220
+Lone Oak,34,CZ,NULL,147,137
+Magnolia,35,CZ,NULL,338,363
+Marigold,36,CZ,NULL,256,322
+McGowan,37,CZ,NULL,51,54
+Memorial,38,CZ,NULL,100,174
+Mill,39,CZ,NULL,225,303
+Mint Valley,40,CZ,NULL,339,335
+Modrow,41,CZ,NULL,171,236
+Mt. Solo,42,CZ,NULL,67,73
+Nevada,43,CZ,NULL,180,218
+Ocean Beach,44,CZ,NULL,184,269
+Olson,45,CZ,NULL,140,176
+Ostrander,46,CZ,NULL,192,310
+Owl Creek,47,CZ,NULL,277,364
+Pacific,48,CZ,NULL,239,252
+Ponderosa,49,CZ,NULL,185,231
+Powell,50,CZ,NULL,186,264
+Redpath,51,CZ,NULL,128,213
+Ridgecrest,52,CZ,NULL,19,17
+Robbins,53,CZ,NULL,292,327
+Rose Valley,54,CZ,NULL,154,188
+Ryderwood,55,CZ,NULL,104,112
+Sacajawea,56,CZ,NULL,435,386
+Sandy Bend,57,CZ,NULL,202,272
+Silver Lake,58,CZ,NULL,247,529
+Sparks,59,CZ,NULL,137,151
+St. Helens,60,CZ,NULL,85,129
+Stella,61,CZ,NULL,151,290
+Toutle,62,CZ,NULL,162,414
+Tower,63,CZ,NULL,247,456
+Tunstall,64,CZ,NULL,99,97
+View,65,CZ,NULL,146,174
+West Kelso,66,CZ,NULL,42,73
+Willow Grove,67,CZ,NULL,63,78
+Windemere,68,CZ,NULL,305,350
+Woodage,69,CZ,NULL,212,172
+Woodland North,70,CZ,NULL,352,289
+Woodland South,71,CZ,NULL,278,263
+Yale,72,CZ,NULL,190,198

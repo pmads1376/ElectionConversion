@@ -1,0 +1,21 @@
+Row Label,PrecinctCode,County,Registered Voters,Yes,No
+Total,-1,SJ,NULL,5808,2620
+San Juan South East,11,SJ,NULL,256,127
+San Juan South West,12,SJ,NULL,426,141
+San Juan Central,13,SJ,NULL,371,209
+San Juan West,14,SJ,NULL,372,181
+San Juan North,15,SJ,NULL,319,165
+San Juan East,16,SJ,NULL,285,147
+Turn Point,17,SJ,NULL,166,93
+Waldron &amp; Outer Is,21,SJ,NULL,52,17
+Orcas West,22,SJ,NULL,451,203
+Orcas Central,23,SJ,NULL,455,176
+Eastsound,24,SJ,NULL,471,214
+Orcas East,25,SJ,NULL,415,141
+Blakely &amp; Outer Is,26,SJ,NULL,23,11
+Lopez North,31,SJ,NULL,630,233
+Lopez South,32,SJ,NULL,452,180
+Decatur and Outer Is,33,SJ,NULL,28,21
+Shaw,41,SJ,NULL,73,36
+Friday Harbor North,101,SJ,NULL,312,200
+Friday Harbor South,102,SJ,NULL,251,125

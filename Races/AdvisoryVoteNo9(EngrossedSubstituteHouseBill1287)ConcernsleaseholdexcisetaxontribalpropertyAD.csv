@@ -1,0 +1,33 @@
+Row Label,PrecinctCode,County,Registered Voters,Repealed,Maintained
+Total,-1,AD,NULL,1785,1268
+Ritzville Ward #1,111,AD,NULL,56,34
+Ritzville Ward #2,112,AD,NULL,49,38
+Ritzville Ward #3,113,AD,NULL,72,74
+Ritzville Ward #4,114,AD,NULL,67,56
+Ritzville Ward #5,115,AD,NULL,60,65
+Ritzville Rural NW,121,AD,NULL,65,72
+Ritzville Rural SE,122,AD,NULL,67,54
+Batum,123,AD,NULL,44,30
+Benge,211,AD,NULL,14,8
+Washtucna City #1,212,AD,NULL,63,30
+Washtucna Rural,221,AD,NULL,36,26
+Ralston,222,AD,NULL,23,13
+Lind #1,311,AD,NULL,114,61
+Hatton City,313,AD,NULL,8,5
+Lind Rural,321,AD,NULL,42,22
+Fairview,322,AD,NULL,18,10
+Schrag,323,AD,NULL,16,20
+Hatton Rural,324,AD,NULL,17,14
+Cunningham,325,AD,NULL,5,5
+Othello City #1,411,AD,NULL,14,8
+Othello City #2,412,AD,NULL,91,72
+Othello City #3,413,AD,NULL,88,72
+Othello City #4,414,AD,NULL,107,76
+Othello City #5,415,AD,NULL,97,64
+Othello City #6,416,AD,NULL,61,43
+Othello Rural #1,511,AD,NULL,38,40
+Othello Rural #2,512,AD,NULL,73,31
+Othello Rural #3,513,AD,NULL,126,78
+Othello Rural #4,514,AD,NULL,91,54
+Othello Rural #5,515,AD,NULL,53,39
+Othello Rural #6,516,AD,NULL,110,54

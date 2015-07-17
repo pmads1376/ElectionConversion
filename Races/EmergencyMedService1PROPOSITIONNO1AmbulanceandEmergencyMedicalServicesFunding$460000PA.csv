@@ -1,0 +1,25 @@
+Row Label,PrecinctCode,County,Registered Voters,YES,NO
+Total,-1,PA,NULL,2157,1269
+Baleville,1,PA,NULL,44,35
+Bay Center,2,PA,NULL,96,72
+Eklund Park,4,PA,NULL,52,24
+Frances-Lebam,6,PA,NULL,89,87
+Menlo-Firdale,11,PA,NULL,223,155
+Naselle,13,PA,NULL,306,171
+Nemah,15,PA,NULL,35,8
+Raymond W2 R,23,PA,NULL,34,22
+Raymond W3 R,24,PA,NULL,20,27
+Smith Creek,27,PA,NULL,38,33
+South Bend 1 R,28,PA,NULL,32,24
+South Bend 3R,29,PA,NULL,3,3
+South Bend 2R,30,PA,NULL,4,7
+South Fork,32,PA,NULL,86,55
+Willapa,34,PA,NULL,278,158
+Raymond W1p1,105,PA,NULL,17,16
+Raymond W1p2,106,PA,NULL,98,41
+Raymond W1p3,107,PA,NULL,101,50
+Raymond W2,108,PA,NULL,103,63
+Raymond W3,110,PA,NULL,165,85
+South Bend 1,113,PA,NULL,151,47
+South Bend 2,115,PA,NULL,83,26
+South Bend 3,117,PA,NULL,99,60

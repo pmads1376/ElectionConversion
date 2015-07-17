@@ -1,0 +1,88 @@
+Row Label,PrecinctCode,County,Registered Voters,Ed Orcutt,John Morgan
+Total,-1,LE,NULL,12736,5580
+Adna ,1,LE,NULL,392,146
+Agate,2,LE,NULL,116,51
+Alpha,3,LE,NULL,298,135
+Berwick,4,LE,NULL,330,123
+Big Bottom,5,LE,NULL,221,108
+Cinebar,7,LE,NULL,192,100
+Claquato,8,LE,NULL,237,78
+Cowlitz,9,LE,NULL,372,149
+Drews Prairie,12,LE,NULL,118,41
+Dryad,13,LE,NULL,61,37
+Elk Crk,14,LE,NULL,68,44
+Emery North(*),16,LE,NULL,0,0
+Ethel,17,LE,NULL,314,115
+Evaline East,18,LE,NULL,82,42
+Fair,20,LE,NULL,0,0
+Fords Prairie,21,LE,NULL,238,103
+Forest,22,LE,NULL,261,89
+Greenwood,23,LE,NULL,10,5
+Harmony,24,LE,NULL,214,107
+Independence,25,LE,NULL,37,22
+Jackson,26,LE,NULL,277,124
+Jackson North,27,LE,NULL,0,0
+Kelly,28,LE,NULL,0,0
+Klickitat,29,LE,NULL,133,69
+Lincoln Creek,30,LE,NULL,205,57
+Logan,31,LE,NULL,206,85
+Mellen(*),33,LE,NULL,0,0
+Meskill,34,LE,NULL,45,16
+Mineral,35,LE,NULL,99,71
+Newaukum,36,LE,NULL,231,55
+Onalaska,37,LE,NULL,407,194
+Packwood,38,LE,NULL,58,31
+Paradise,39,LE,NULL,17,28
+Parcuvia,40,LE,NULL,189,67
+Prescott,41,LE,NULL,464,174
+Randle East,42,LE,NULL,201,96
+Randle West,43,LE,NULL,149,80
+Roswell,44,LE,NULL,8,3
+Salkum,45,LE,NULL,187,64
+Salmon Creek,46,LE,NULL,404,134
+Salzer,47,LE,NULL,96,42
+Sears,48,LE,NULL,165,60
+Seminary Hill,49,LE,NULL,115,59
+Silver Creek,50,LE,NULL,201,103
+Skookumchuck,51,LE,NULL,214,97
+Sommerville,52,LE,NULL,45,18
+Stearns Creek,53,LE,NULL,92,34
+Stillwater East,54,LE,NULL,65,26
+Temple,56,LE,NULL,161,117
+Union,57,LE,NULL,163,51
+Verndale,60,LE,NULL,172,118
+Whealdon,61,LE,NULL,171,59
+Centralia #1,101,LE,NULL,95,47
+Centralia #2,102,LE,NULL,232,117
+Centralia #3,103,LE,NULL,103,39
+Centralia #4,104,LE,NULL,149,66
+Centralia #5,105,LE,NULL,95,56
+Centralia #6,106,LE,NULL,175,99
+Centralia #7,107,LE,NULL,96,41
+Centralia #8,108,LE,NULL,132,44
+Centralia #9,109,LE,NULL,237,103
+Centralia #10,110,LE,NULL,79,40
+Centralia #11,111,LE,NULL,215,115
+Centralia #12,112,LE,NULL,298,110
+Centralia #13,113,LE,NULL,279,129
+Chehalis #1,201,LE,NULL,142,88
+Chehalis #2,202,LE,NULL,119,43
+Chehalis #3,203,LE,NULL,120,51
+Chehalis #4,204,LE,NULL,97,55
+Chehalis #5,205,LE,NULL,116,29
+Chehalis #6,206,LE,NULL,248,71
+Chehalis #7,207,LE,NULL,35,19
+Chehalis #8,208,LE,NULL,173,60
+Chehalis #9,209,LE,NULL,5,10
+Morton,300,LE,NULL,164,84
+Mossyrock,400,LE,NULL,89,37
+Napavine #1,501,LE,NULL,277,137
+Napavine #2,502,LE,NULL,0,0
+Napavine #3(*),503,LE,NULL,0,0
+Napavine #4,504,LE,NULL,0,0
+Napavine #5,505,LE,NULL,0,0
+Napavine #6,506,LE,NULL,0,0
+Pe Ell,600,LE,NULL,102,65
+Toledo,700,LE,NULL,104,61
+Vader,800,LE,NULL,97,47
+Winlock,900,LE,NULL,157,87

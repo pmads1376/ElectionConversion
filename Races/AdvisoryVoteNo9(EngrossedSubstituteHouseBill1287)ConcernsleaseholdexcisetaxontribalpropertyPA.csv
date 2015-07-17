@@ -1,0 +1,41 @@
+Row Label,PrecinctCode,County,Registered Voters,Repealed,Maintained
+Total,-1,PA,NULL,4149,3239
+Baleville,1,PA,NULL,40,31
+Bay Center,2,PA,NULL,85,77
+Chinook,3,PA,NULL,127,103
+Eklund Park,4,PA,NULL,36,33
+Frances-Lebam(*),6,PA,NULL,0,0
+Ilwaco 1 Rural(*),7,PA,NULL,0,0
+Ilwaco 2 Rural,8,PA,NULL,39,30
+Klipsan,9,PA,NULL,172,143
+Menlo-Firdale,11,PA,NULL,187,148
+Nahcotta,12,PA,NULL,420,292
+Naselle,13,PA,NULL,263,197
+Nemah,15,PA,NULL,24,16
+North Cove,16,PA,NULL,163,144
+Pioneer 2,17,PA,NULL,109,88
+North River,18,PA,NULL,17,17
+Ocean Park 1,19,PA,NULL,116,77
+Ocean Park 2,20,PA,NULL,273,207
+Oysterville,21,PA,NULL,201,184
+Pioneer,22,PA,NULL,119,103
+Raymond W2 R,23,PA,NULL,33,20
+Raymond W3 R,24,PA,NULL,26,15
+Seaview 1,25,PA,NULL,137,145
+Seaview 2,26,PA,NULL,20,10
+Smith Creek,27,PA,NULL,39,31
+South Bend 1 R,28,PA,NULL,27,21
+South Bend 3R,29,PA,NULL,3,3
+South Bend 2R,30,PA,NULL,5,6
+South Fork,32,PA,NULL,73,45
+Willapa,34,PA,NULL,231,154
+Ilwaco City,101,PA,NULL,158,157
+Long Beach,103,PA,NULL,292,193
+Raymond W1p1,105,PA,NULL,17,11
+Raymond W1p2,106,PA,NULL,71,55
+Raymond W1p3,107,PA,NULL,85,46
+Raymond W2,108,PA,NULL,94,62
+Raymond W3,110,PA,NULL,130,100
+South Bend 1,113,PA,NULL,96,85
+South Bend 2,115,PA,NULL,44,48
+South Bend 3,117,PA,NULL,84,66

@@ -1,0 +1,8 @@
+Row Label,PrecinctCode,County,Registered Voters,Approved,Rejected
+Total,-1,AD,NULL,226,111
+Lind #1,311,AD,NULL,146,52
+Lind Rural,321,AD,NULL,57,16
+Fairview,322,AD,NULL,11,16
+Schrag,323,AD,NULL,7,25
+Hatton Rural(*),324,AD,NULL,0,0
+Cunningham(*),325,AD,NULL,0,0

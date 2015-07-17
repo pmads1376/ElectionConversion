@@ -1,0 +1,46 @@
+Row Label,PrecinctCode,County,Registered Voters,Kevin Van De Wege
+Total,-1,GY,NULL,7167
+Taholah 002,2,GY,NULL,165
+Quinault 004,4,GY,NULL,94
+Neilton 006,6,GY,NULL,48
+Pacific Beach 008,8,GY,NULL,136
+Moclips 010,10,GY,NULL,16
+Ocean City 012,12,GY,NULL,196
+Burrows 014,14,GY,NULL,18
+Wilderness 016,16,GY,NULL,67
+Humptulips 018,18,GY,NULL,39
+Axford 020,20,GY,NULL,81
+Dekay 022,22,GY,NULL,40
+Hoquiam Rural 024,24,GY,NULL,205
+Stover 026,26,GY,NULL,38
+North Wishkah 028,28,GY,NULL,2
+Wishkah 030,30,GY,NULL,175
+Cutoff032,32,GY,NULL,61
+Coats Landing 034,34,GY,NULL,180
+Geissler 036,36,GY,NULL,28
+Aberdeen Lake 038,38,GY,NULL,2
+Reynvaan 040,40,GY,NULL,86
+Wynoochee 042,42,GY,NULL,3
+Boundary 044,44,GY,NULL,31
+Black Creek 046,46,GY,NULL,315
+Brady 048,48,GY,NULL,313
+Riviera 050,50,GY,NULL,30
+Satsop 052,52,GY,NULL,110
+Calder 056,56,GY,NULL,162
+Bush 058,58,GY,NULL,341
+McCleary Rural 060,60,GY,NULL,255
+Porter 062,62,GY,NULL,133
+Cedar Creek 064,64,GY,NULL,55
+Aberdeen 132,132,GY,NULL,0
+Elma 301,301,GY,NULL,150
+Elma 302,302,GY,NULL,327
+Hoquiam 411,411,GY,NULL,264
+Hoquiam 421,421,GY,NULL,227
+Hoquiam 431,431,GY,NULL,276
+Hoquiam 441,441,GY,NULL,297
+Hoquiam 451,451,GY,NULL,220
+Hoquiam 461,461,GY,NULL,231
+McCleary 501,501,GY,NULL,274
+Ocean Shores 801,801,GY,NULL,425
+Ocean Shores 802,802,GY,NULL,560
+Ocean Shores 803,803,GY,NULL,491

@@ -1,0 +1,97 @@
+Row Label,PrecinctCode,County,Registered Voters,Gary Stamper,Rich Bainbridge
+Total,-1,LE,NULL,10795,8910
+Adna ,1,LE,NULL,250,249
+Agate,2,LE,NULL,76,84
+Alpha,3,LE,NULL,179,260
+Berwick,4,LE,NULL,246,192
+Big Bottom,5,LE,NULL,238,100
+Boistfort,6,LE,NULL,41,60
+Cinebar,7,LE,NULL,114,166
+Claquato,8,LE,NULL,142,153
+Cowlitz,9,LE,NULL,276,227
+Crego,10,LE,NULL,360,308
+Curtis,11,LE,NULL,53,57
+Drews Prairie,12,LE,NULL,89,65
+Dryad,13,LE,NULL,61,44
+Elk Crk,14,LE,NULL,56,46
+Emery(*),15,LE,NULL,0,0
+Emery North(*),16,LE,NULL,0,0
+Ethel,17,LE,NULL,229,214
+Evaline East,18,LE,NULL,57,55
+Evaline West,19,LE,NULL,109,57
+Fair,20,LE,NULL,0,0
+Fords Prairie,21,LE,NULL,178,143
+Forest,22,LE,NULL,171,174
+Greenwood,23,LE,NULL,3,10
+Harmony,24,LE,NULL,227,115
+Independence,25,LE,NULL,26,33
+Jackson,26,LE,NULL,202,183
+Jackson North,27,LE,NULL,0,0
+Kelly,28,LE,NULL,0,0
+Klickitat,29,LE,NULL,132,73
+Lincoln Creek,30,LE,NULL,107,131
+Logan,31,LE,NULL,167,116
+Mauermann,32,LE,NULL,39,32
+Mellen(*),33,LE,NULL,0,0
+Meskill,34,LE,NULL,30,24
+Mineral,35,LE,NULL,107,49
+Newaukum,36,LE,NULL,126,134
+Onalaska,37,LE,NULL,271,349
+Packwood,38,LE,NULL,62,33
+Paradise,39,LE,NULL,30,17
+Parcuvia,40,LE,NULL,129,119
+Prescott,41,LE,NULL,297,282
+Randle East,42,LE,NULL,220,101
+Randle West,43,LE,NULL,150,90
+Roswell,44,LE,NULL,2,6
+Salkum,45,LE,NULL,160,109
+Salmon Creek,46,LE,NULL,274,234
+Salzer,47,LE,NULL,62,69
+Sears,48,LE,NULL,111,98
+Seminary Hill,49,LE,NULL,100,67
+Silver Creek,50,LE,NULL,197,119
+Skookumchuck,51,LE,NULL,146,144
+Sommerville,52,LE,NULL,38,19
+Stearns Creek,53,LE,NULL,66,57
+Stillwater East,54,LE,NULL,49,33
+Stillwater West,55,LE,NULL,80,63
+Temple,56,LE,NULL,214,74
+Union,57,LE,NULL,99,116
+Urquhart,58,LE,NULL,89,81
+Veness,59,LE,NULL,143,143
+Verndale,60,LE,NULL,243,86
+Whealdon,61,LE,NULL,132,84
+Centralia #1,101,LE,NULL,87,45
+Centralia #2,102,LE,NULL,170,156
+Centralia #3,103,LE,NULL,74,52
+Centralia #4,104,LE,NULL,116,72
+Centralia #5,105,LE,NULL,73,67
+Centralia #6,106,LE,NULL,131,129
+Centralia #7,107,LE,NULL,64,68
+Centralia #8,108,LE,NULL,87,77
+Centralia #9,109,LE,NULL,188,133
+Centralia #10,110,LE,NULL,63,60
+Centralia #11,111,LE,NULL,181,134
+Centralia #12,112,LE,NULL,187,204
+Centralia #13,113,LE,NULL,209,184
+Chehalis #1,201,LE,NULL,120,107
+Chehalis #2,202,LE,NULL,83,76
+Chehalis #3,203,LE,NULL,75,92
+Chehalis #4,204,LE,NULL,76,78
+Chehalis #5,205,LE,NULL,71,76
+Chehalis #6,206,LE,NULL,147,156
+Chehalis #7,207,LE,NULL,28,22
+Chehalis #8,208,LE,NULL,105,109
+Chehalis #9,209,LE,NULL,8,4
+Morton,300,LE,NULL,182,83
+Mossyrock,400,LE,NULL,100,47
+Napavine #1,501,LE,NULL,223,167
+Napavine #2,502,LE,NULL,0,0
+Napavine #3(*),503,LE,NULL,0,0
+Napavine #4,504,LE,NULL,0,0
+Napavine #5,505,LE,NULL,0,0
+Napavine #6,506,LE,NULL,0,0
+Pe Ell,600,LE,NULL,105,51
+Toledo,700,LE,NULL,80,75
+Vader,800,LE,NULL,67,61
+Winlock,900,LE,NULL,139,87

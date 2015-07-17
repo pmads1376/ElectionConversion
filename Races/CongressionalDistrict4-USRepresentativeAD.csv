@@ -1,0 +1,33 @@
+Row Label,PrecinctCode,County,Registered Voters,Clint Didier,Dan Newhouse
+Total,-1,AD,NULL,1908,1336
+Ritzville Ward #1,111,AD,NULL,55,44
+Ritzville Ward #2,112,AD,NULL,49,40
+Ritzville Ward #3,113,AD,NULL,88,70
+Ritzville Ward #4,114,AD,NULL,72,59
+Ritzville Ward #5,115,AD,NULL,59,80
+Ritzville Rural NW,121,AD,NULL,100,46
+Ritzville Rural SE,122,AD,NULL,83,49
+Batum,123,AD,NULL,60,25
+Benge,211,AD,NULL,17,9
+Washtucna City #1,212,AD,NULL,63,30
+Washtucna Rural,221,AD,NULL,43,17
+Ralston,222,AD,NULL,22,14
+Lind #1,311,AD,NULL,117,68
+Hatton City,313,AD,NULL,10,4
+Lind Rural,321,AD,NULL,44,28
+Fairview,322,AD,NULL,14,14
+Schrag,323,AD,NULL,20,16
+Hatton Rural,324,AD,NULL,26,7
+Cunningham,325,AD,NULL,4,6
+Othello City #1,411,AD,NULL,12,10
+Othello City #2,412,AD,NULL,99,85
+Othello City #3,413,AD,NULL,82,85
+Othello City #4,414,AD,NULL,104,92
+Othello City #5,415,AD,NULL,99,80
+Othello City #6,416,AD,NULL,64,40
+Othello Rural #1,511,AD,NULL,42,29
+Othello Rural #2,512,AD,NULL,62,42
+Othello Rural #3,513,AD,NULL,124,85
+Othello Rural #4,514,AD,NULL,96,57
+Othello Rural #5,515,AD,NULL,69,30
+Othello Rural #6,516,AD,NULL,109,75

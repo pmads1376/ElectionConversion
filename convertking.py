@@ -58,13 +58,15 @@ with open(RESULTS_CSV, 'r') as results_file:
 #         # Compare the candidates in the row to export vs
 #         # the total candidates to make sure the line is completed
 #         # only when all candidates have been added to the export row
-        final_names = set(this_race.candidates)
-        current_names = set(export_row.keys())
+            # if all candidates are in this row:
+            #     put the row in writerows of the race object
 
-        if not(final_names - current_names):
-            this_race.rows_to_write.append(export_row)
-
-            last_fn = set(export_row.keys())
+            for candidate in this_race.candidates:
+                if (candidate in export_row.keys()):
+                    break
+                else:
+                    print(export_row)
+                    this_race.rows_to_write.append(export_row)
 
 # Export CSV FIles
 print("exporting results")
@@ -91,7 +93,8 @@ for race, details in races.iteritems():
         try:
             writer.writerows(details.rows_to_write)
         except ValueError as er:
-            print(er)
+            print(race)
+            # print(er)
             print(len(details.rows_to_write))
 
 """

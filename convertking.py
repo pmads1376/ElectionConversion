@@ -1,103 +1,89 @@
-# /usr/bin/env
+#! /usr/bin/env python
 
 import csv
 from political import Race
 import os
 
-# RESULTS_CSV = '20141104_AllStatePrecincts.csv'
-# RESULTS_CSV = '20140805_AllStatePrecincts.csv'
-# RESULTS_CSV = 'test.csv'
-RESULTS_CSV = 'ecanvass.csv'
 
-# RACE_CSV = '20141104_AllState.csv'
+def convert_king_races(csv_in):
+    races = {}
 
-races = {}
+    print("Building Races")
+    # Determine Which Races Occured in election and the candidates
+    with open(csv_in, 'r') as races_file:
+        race_read = csv.DictReader(races_file, delimiter=',')
 
-print("Building Races")
-# Determine Which Races Occured in election and the candidates
-with open(RESULTS_CSV, 'r') as races_file:
-    race_read = csv.DictReader(races_file, delimiter=',')
+        for row in race_read:
+            current_row = Race(row['Race'], 'KI')
+            current_race = str(current_row)
 
-    for row in race_read:
-        current_row = Race(row['Race'], 'KI')
-        current_race = str(current_row)
+            if not(current_race in races):
+                races[current_race] = current_row
+                races[current_race].candidates = [row['CounterType']]
+            else:
+                if row['CounterType'] not in races[current_race].candidates:
+                    races[current_race].candidates.append(row['CounterType'])
 
-        if not(current_race in races):
-            races[current_race] = current_row
-            races[current_race].candidates = [row['CounterType']]
-        else:
-            if row['CounterType'] not in races[current_race].candidates:
-                races[current_race].candidates.append(row['CounterType'])
+    # Open Results CSV file
+    print("Constructing rows")
+    with open(csv_in, 'r') as results_file:
+        results_read = csv.DictReader(results_file, delimiter=',')
 
+    #     # Main File Processing
+        for row in results_read:
+            this_race = races[row['Race'] + ' ' + 'KI']
+            race_rows = this_race.rows_to_write
+            precinct = row['Precinct']
 
-# Open Results CSV file
-print("Constructing rows")
-with open(RESULTS_CSV, 'r') as results_file:
-    results_read = csv.DictReader(results_file, delimiter=',')
+            try:
+                if race_rows[precinct]:
+                    race_rows[precinct][row['CounterType']] = row['SumOfCount']
+            except KeyError:
+                race_rows[precinct] = {
+                    row['CounterType']: row['SumOfCount'],
+                    'Row Label': row['Precinct'],
+                    'County': 'KI',
+                }
 
-    current_precinct = ''
-    export_row = {}
+    # Export CSV FIles
+    print("exporting results")
+    subdir = os.path.join('Races', str(csv_in[0:8]))
+    out_directory = os.path.join(os.getcwd(), subdir)
 
-    last_fn = set()
+    if not os.path.exists(out_directory):
+        print("Made directory")
+        os.makedirs(out_directory)
+    else:
+        print("Directory Exists")
 
-#     # Main File Processing
-    for row in results_read:
-        this_race = races[row['Race'] + ' ' + 'KI']
+    count = 0
+    succesful_races = []
 
-        if row['Precinct'] == current_precinct:
-            export_row[row['CounterType']] = row['SumOfCount']
-        else:
-            export_row = {
-                row['CounterType']: row['SumOfCount'],
-                'Row Label': row['Precinct'],
-                'PrecinctCode': row['Precinct'],
-                'County': 'KI',
-                'Registered Voters': 'NULL'
-            }
-            current_precinct = row['Precinct']
-#         # Compare the candidates in the row to export vs
-#         # the total candidates to make sure the line is completed
-#         # only when all candidates have been added to the export row
-            # if all candidates are in this row:
-            #     put the row in writerows of the race object
+    for race, details in races.iteritems():
 
-            for candidate in this_race.candidates:
-                if (candidate in export_row.keys()):
-                    break
-                else:
-                    print(export_row)
-                    this_race.rows_to_write.append(export_row)
+        for char in [".", " ", ",", "/"]:
+            race = race.replace(char, "")
 
-# Export CSV FIles
-print("exporting results")
-out_directory = os.path.join(os.getcwd(), 'Races')
+        file_out = os.path.join(out_directory, race + ".csv")
 
-if not os.path.exists(os.path.join(out_directory, "King")):
-    print("made directory")
-    os.makedirs(os.path.join(out_directory, "King"))
-else:
-    print("Directory Exists")
+        with open(file_out, 'wr') as outfile:
+            fields = ['Row Label', 'County']
+            fields = fields + details.candidates
+            writer = csv.DictWriter(outfile, fieldnames=fields)
+            writer.writeheader()
 
-for race, details in races.iteritems():
+            try:
+                for k, v in details.rows_to_write.iteritems():
+                    writer.writerow(v)
+                succesful_races.append(race)
+            except ValueError:
+                count += 1
 
-    for char in [".", " ", ",", "/"]:
-        race = race.replace(char, "")
+    # Stats readouts
+    for race in succesful_races:
+        print(race)
 
-    file_out = os.path.join(out_directory, race + ".csv")
+    print("Success rate {} of {}".format((len(races) - count), len(races)))
 
-    with open(file_out, 'wr') as outfile:
-        fields = ['Row Label', 'PrecinctCode', 'County', 'Registered Voters']
-        fields = fields + details.candidates
-        writer = csv.DictWriter(outfile, fieldnames=fields)
-        writer.writeheader()
-        try:
-            writer.writerows(details.rows_to_write)
-        except ValueError as er:
-            print(race)
-            # print(er)
-            print(len(details.rows_to_write))
-
-"""
-for file in directory
-
-"""
+if __name__ == '__main__':
+    convert_king_races('20141104ecanvass.csv')

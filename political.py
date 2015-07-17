@@ -4,7 +4,7 @@ class Race:
     def __init__(self, race_name, county):
         self.race_name = race_name
         self.county = county
-        self.rows_to_write = []
+        self.rows_to_write = {}
 
     def __eq__(self, other):
         return (

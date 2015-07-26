@@ -55,17 +55,25 @@ def convert_king_races(csv_in):
     # Determine Which Races Occured in election and the candidates
     with open(csv_in, 'r') as races_file:
         race_read = csv.DictReader(races_file, delimiter=',')
+        king_only_candidates = [
+            'Registered Voters',
+            'Times Blank Voted',
+            'Times Counted',
+            'Times Over Voted',
+            'Write-in'
+        ]
 
         for row in race_read:
             current_row = Race(row['Race'], 'KI')
             current_race = str(current_row)
 
-            if not(current_race in races):
-                races[current_race] = current_row
-                races[current_race].candidates = [row['CounterType']]
-            else:
-                if row['CounterType'] not in races[current_race].candidates:
-                    races[current_race].candidates.append(row['CounterType'])
+            if row['CounterType'] not in king_only_candidates:
+                if not(current_race in races):
+                    races[current_race] = current_row
+                    races[current_race].candidates = [row['CounterType']]
+                else:
+                    if row['CounterType'] not in races[current_race].candidates:
+                        races[current_race].candidates.append(row['CounterType'])
 
     # Open Results CSV file
     print("Constructing rows for King Races")
@@ -75,26 +83,19 @@ def convert_king_races(csv_in):
     #     # Main File Processing
         for row in results_read:
             this_race = races[row['Race'] + ' ' + 'KI']
-            race_rows = this_race.rows_to_write
+            rtw = this_race.rows_to_write
             precinct = row['Precinct']
 
-            king_only_candidates = [
-                'Registered Voters',
-                'Times Blank Voted',
-                'Times Counted',
-                'Times Over Voted'
-            ]
-
-            if row['CounterType'] not in king_only_candidates:
-                try:
-                    if race_rows[precinct]:
-                        race_rows[precinct][row['CounterType']] = row['SumOfCount']
-                except KeyError:
-                    race_rows[precinct] = {
-                        row['CounterType']: row['SumOfCount'],
-                        'Row Label': row['Precinct'],
-                        'County': 'KI',
-                    }
+            # print(row['CounterType'])
+            try:
+                if rtw[precinct]:
+                    rtw[precinct][row['CounterType']] = row['SumOfCount']
+            except KeyError:
+                rtw[precinct] = {
+                    row['CounterType']: row['SumOfCount'],
+                    'Row Label': row['Precinct'],
+                    'County': 'KI',
+                }
 
     return races
 
@@ -117,23 +118,29 @@ def combine_races(state_races, king_races):
 
     count = 0
     for jr in joined_races.values():
-        if 'KI' in jr.counties:
-            for race in king_races:
-                if jr.candidates == race.candidates:
-                    print(jr.race_name)
-            # print jr.candidates
-            # Initiatives
-            # if jr.candidates == ['Yes', 'No']:
-            #     print(jr.race_name)
-            #     count += 1
-            # elif jr.candidates == ['Approved', 'Rejected']:
-            #     print(jr.race_name)
-            #     count += 1
-            # elif jr.candidates == ['Repealed', 'Maintained']:
-            #     print(jr.race_name)
-            #     count += 1
+        for race in king_races.values():
+            if jr.candidates == race.candidates:
+                # print(jr.race_name)
+                if 'KI' in jr.counties:
+                    print(jr.candidates)
+                    print(race.candidates)
+                    print(jr.counties)
+                    if jr.candidates == ['Yes', 'No']:
+                        # print(jr.race_name)
+                        # print(race)
+                        count += 1
+                    elif jr.candidates == ['Approved', 'Rejected']:
+                        # print(jr.race_name)
+                        # print(race)
+                        count += 1
+                    elif jr.candidates == ['Repealed', 'Maintained']:
+                        # print(race)
+                        # print(jr.race_name)
+                        count += 1
 
     print(count)
+
+    return joined_races
 
 
 # Export CSV FIles
@@ -179,3 +186,4 @@ def export_files(joined_races):
 if __name__ == '__main__':
     state_race = convert_state_races(state_csv_in)
     king_race = convert_king_races(king_csv_in)
+    joined_races = combine_races(state_race, king_race)

@@ -74,49 +74,27 @@ succesful_races = []
 
 for jr in joined_races.values():
 
+    race = jr.race_name
+
     for char in [".", " ", ",", "/"]:
-        race = jr.race_name.replace(char, "")
+        race = race.replace(char, "")
 
     file_out = os.path.join(out_directory, race + ".csv")
 
-    rowkeys = []
-
     with open(file_out, 'wr') as outfile:
-        # construct outfile column headers
-        for row in jr.rows:
-            for d in row:
-                for key in d.keys():
-                    if key not in rowkeys:
-                        rowkeys.append(key)
-        # fields = ['Row Label', 'County']
-        # fields = fields + jr.candidates
+        rowkeys = ['Row Label', 'County']
+        rowkeys += jr.candidates
+
         writer = csv.DictWriter(outfile, fieldnames=rowkeys)
         writer.writeheader()
 
-    #     for row in jr.rows:
-    #         try:
-    #                 # for row in jr.rows:
-    #                 writer.writerow(row)
-    #                 # print(row)
-    #         except ValueError as e:
-    #             # succesful_races.append(race)
-    #             for d in row:
-    #                 for key in d.keys():
-    #                     if key not in rowkeys:
-    #                         rowkeys.append(key)
-    #             print(jr.race_name)
-    #             print(jr.counties)
-    #             print(fields)
-    #             print(rowkeys)
-    #             print(fields == rowkeys)
-    #             print(type(row))
-    #             print('*****************')
-    #             # print e
-    #             count += 1
+        try:
+            for row in jr.rows:
+                writer.writerows(row)
+        except ValueError as e:
+            for row in jr.rows:
+                print(row)
 
-    # Stats readouts
-# for race in succesful_races:
-#     print(race)
 
 # print("Success rate {} of {}".format((len(joined_races) - count), len(joined_races)))
 # if __name__ == '__main__':

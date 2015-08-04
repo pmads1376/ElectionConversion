@@ -2,21 +2,27 @@ import csv
 from political import Race, JoinedRace
 import os
 
+files = []
+
 # 2014 Primary FIles
 state_csv_in = '20140805_AllStatePrecincts.csv'
 king_csv_in = '20140805_king.csv'
+files.append((state_csv_in, king_csv_in))
 
 # 2014 General Files
 state_csv_in = '20141104_AllStatePrecincts.csv'
 king_csv_in = '20141104_king.csv'
+files.append((state_csv_in, king_csv_in))
 
 # 2013 General Files
 state_csv_in = '20131105_AllStatePrecincts_20131210_0314.csv'
 king_csv_in = '20131105_king.csv'
+files.append((state_csv_in, king_csv_in))
 
 # 2013 Primary FIles
 state_csv_in = '20130806_AllStatePrecincts_20130823_1120.csv'
 king_csv_in = '20130806_king.csv'
+files.append((state_csv_in, king_csv_in))
 
 
 def convert_state_races(csv_in):
@@ -243,8 +249,9 @@ def export_joined_files(joined_races, subdir_name):
         print(r)
 
 if __name__ == '__main__':
-    state_race = convert_state_races(state_csv_in)
-    king_race = convert_king_races(king_csv_in)
-    joined_races, manual_joins = combine_races(state_race, king_race)
-    export_joined_files(joined_races, str(state_csv_in[0:8]))
-    export_joined_files(manual_joins, 'Manual' + str(state_csv_in[0:8]))
+    for state_csv_in, king_csv_in in files:
+        state_race = convert_state_races(state_csv_in)
+        king_race = convert_king_races(king_csv_in)
+        joined_races, manual_joins = combine_races(state_race, king_race)
+        export_joined_files(joined_races, str(state_csv_in[0:8]))
+        export_joined_files(manual_joins, 'Manual' + str(state_csv_in[0:8]))

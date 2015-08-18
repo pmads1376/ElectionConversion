@@ -1,4 +1,4 @@
-class Race:
+class Race(object):
 
     def __init__(self, race_name, county):
         self.race_name = race_name
@@ -24,9 +24,17 @@ class Race:
     def __str__(self):
         return self.race_name + " " + self.county
 
+
 class JoinedRace(Race):
     """docstring for JoinedRace"""
-    def __init__(self, race_name, candidates, rows_to_write):
-        super(JoinedRace, self).__init__(race_name, race_name[:-2])
+    def __init__(self, race_name, candidates, county, rows_to_write):
+        super(JoinedRace, self).__init__(race_name[:-2], county)
         self.race_name = race_name
-        
+        self.candidates = candidates
+        self.county = county
+
+        self.rows = [rows_to_write]
+        self.counties = []
+
+    def __str__(self):
+        return self.race_name

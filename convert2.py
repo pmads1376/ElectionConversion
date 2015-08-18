@@ -9,7 +9,7 @@ state_csv_in = '20140805_AllStatePrecincts.csv'
 king_csv_in = '20140805_king.csv'
 files.append((state_csv_in, king_csv_in))
 
-# 2014 General Files
+# 2014 General Files`
 state_csv_in = '20141104_AllStatePrecincts.csv'
 king_csv_in = '20141104_king.csv'
 files.append((state_csv_in, king_csv_in))
@@ -44,6 +44,9 @@ def convert_state_races(csv_in):
                 if row['Candidate'] not in state_randc[cur_race].candidates:
                     state_randc[cur_race].candidates.append(row['Candidate'])
 
+            if "Registered Voters" not in state_randc[cur_race].candidates:
+                state_randc[cur_race].candidates.append("Registered Voters")
+
     # Open Stte CSV file
     print("Constructing rows for Non-King State Races")
     with open(state_csv_in, 'r') as results_file:
@@ -53,6 +56,8 @@ def convert_state_races(csv_in):
             this_race = state_randc[row['Race'] + ' ' + row['CountyCode']]
             rtw = this_race.rows_to_write
             precinct = row['PrecinctName']
+            if ";" in precinct:
+                    precinct = precinct.replace(";", "")
 
             try:
                 if rtw[precinct]:
@@ -60,8 +65,9 @@ def convert_state_races(csv_in):
             except KeyError:
                 rtw[precinct] = {
                     row['Candidate']: row['Votes'],
-                    'Row Label': row['PrecinctName'],
+                    'Row Label': precinct,
                     'County': row['CountyCode'],
+                    'Registered Voters': None
                 }
 
     return state_randc
@@ -70,7 +76,7 @@ def convert_state_races(csv_in):
 def convert_king_races(csv_in):
     races = {}
     king_only_candidates = [
-        'Registered Voters',
+        # 'Registered Voters',
         'Times Blank Voted',
         'Times Counted',
         'Times Over Voted',
@@ -105,6 +111,9 @@ def convert_king_races(csv_in):
             rtw = this_race.rows_to_write
             precinct = row['Precinct']
 
+            if ";" in precinct:
+                    precinct = precinct.replace(";", "")
+
             if row['CounterType'] not in king_only_candidates:
                 try:
                     if rtw[precinct]:
@@ -112,7 +121,7 @@ def convert_king_races(csv_in):
                 except KeyError:
                     rtw[precinct] = {
                         row['CounterType']: row['SumOfCount'],
-                        'Row Label': row['Precinct'],
+                        'Row Label': precinct,
                         'County': 'KI',
                     }
 
@@ -140,63 +149,36 @@ def combine_races(state_races, king_races):
     for r in joined_races.values():
         if 'KI' in r.counties:
             k_races.append(r)
-            # print(r)
 
-    shared_races = []
-    un_state_races = []
-    un_king_races = []
+    review_races = []
 
-    for jr in k_races:
-        for king in king_races.values():
-            if 'KI' in jr.counties:
-                if set(jr.candidates) == set(king.candidates):
-                    if jr not in shared_races:
-                        shared_races.append(jr)
-                    elif 'Yes' in king.candidates:
-                        if jr not in un_state_races:
-                            un_state_races.append(jr)
-                        if king not in un_king_races:
-                            un_king_races.append(king)
-                    elif 'Approved' in king.candidates:
-                        if jr not in un_state_races:
-                            un_state_races.append(jr)
-                        if king not in un_king_races:
-                            un_king_races.append(king)
-                    elif 'Maintained' in king.candidates:
-                        if jr not in un_state_races:
-                            un_state_races.append(jr)
-                        if king not in un_king_races:
-                            un_king_races.append(king)
-                    else:
-                        print("candidates faile: {}".format(jr))
-                        if jr not in un_state_races:
-                            un_state_races.append(jr)
-                        if king not in un_king_races:
-                            un_king_races.append(king)
-
-                    if jr in shared_races:
-                        jr.rows.append([row for row in king.rows_to_write.values()])
-
-    for r in k_races:
-        if r not in shared_races:
-            un_state_races.append(r)
-
-    print("Number of state races listing KI is: {}".format(len(k_races)))
-    # print("There are {} races that don't have unique candidates".format(len(unique_races)))
-    print("There are {} unique state races and {} unique king races".format(len(un_state_races), len(un_king_races)))
-    print("The number of matches is: {}".format(len(shared_races)))
+    for race in k_races:
+        for other_race in king_races.values():
+            if set(race.candidates) == set(other_race.candidates):
+                if 'Yes' in other_race.candidates:
+                    if race not in review_races:
+                        review_races.append(race)
+                    if other_race not in review_races:
+                        review_races.append(other_race)
+                elif 'Approved' in other_race.candidates:
+                    if race not in review_races:
+                        review_races.append(race)
+                    if other_race not in review_races:
+                        review_races.append(other_race)
+                elif 'Maintained' in other_race.candidates:
+                    if race not in review_races:
+                        review_races.append(race)
+                    if other_race not in review_races:
+                        review_races.append(other_race)
+                else:
+                    race.rows.append([row for row in other_race.rows_to_write.values()])
 
     manual_joins = {}
 
-    for r_ in un_state_races:
-        manual_joins[r_.race_name] = r_
-        del(joined_races[r_.race_name])
+    for race in review_races:
+        manual_joins[race.race_name] = race
 
-    for r_ in un_king_races:
-        if r_.race_name not in manual_joins:
-            manual_joins[r_.race_name] = r_
-        else:
-            print("It actually matched?")
+    print("{} list and {} dict".format(len(review_races), len(manual_joins.keys())))
 
     return (joined_races, manual_joins)
 
@@ -212,12 +194,14 @@ def export_joined_files(joined_races, subdir_name):
         os.makedirs(out_directory)
     else:
             print("Directory Exists")
+            # pass
 
     count_export = 0
     unsuccesful_races = []
 
-    for jr in joined_races.values():
+    # print("length of joined races {}:".format(len(joined_races.values())))
 
+    for jr in joined_races.values():
         race = jr.race_name
 
         for char in [".", " ", ",", "/"]:
@@ -226,8 +210,11 @@ def export_joined_files(joined_races, subdir_name):
         file_out = os.path.join(out_directory, race + ".csv")
 
         with open(file_out, 'wr') as outfile:
+            # print(file_out)
             rowkeys = ['Row Label', 'County']
             rowkeys += jr.candidates
+            if "Registered Voters" not in jr.candidates:
+                rowkeys.append("Registered Voters")
 
             writer = csv.DictWriter(outfile, fieldnames=rowkeys)
             writer.writeheader()
@@ -240,10 +227,10 @@ def export_joined_files(joined_races, subdir_name):
                         writer.writerows(row)
             except ValueError as e:
                 print(e)
-                print(jr.rows[0])
+                print(jr.rows[0][0])
                 count_export += 1
 
-    print("Success rate {} of {}".format((len(joined_races) - count_export), len(joined_races)))
+    # print("Success rate {} of {}".format((len(joined_races) - count_export), len(joined_races)))
 
     for r in unsuccesful_races:
         print(r)

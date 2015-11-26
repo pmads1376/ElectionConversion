@@ -58,3 +58,6 @@ target/
 
 # Data files
 *.csv
+Races/
+Results/
+files/
